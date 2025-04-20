@@ -10,5 +10,3 @@ export const fetchModeration = async (input, model = defmodel) => {
   });
   return res;
 };
-
-console.log(res);
