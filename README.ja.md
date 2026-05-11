@@ -1,31 +1,29 @@
 # openai-moderation
 
-> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
+OpenAI APIを使用したコンテンツモデレーションのための軽量なJavaScript/Denoモジュール。
 
-A lightweight JavaScript/Deno module for content moderation using the OpenAI API.
+## 特徴
 
-## Features
+- OpenAIのモデレーションエンドポイントでテキストをチェックするシンプルな関数。
+- デフォルトで `omni-moderation-latest` モデルを使用。
+- OpenAI APIを通じて無料で利用可能。
+- Denoおよびその他のモダンなJavaScriptランタイムで動作。
 
-- Simple function to check text against OpenAI's moderation endpoint.
-- Uses the `omni-moderation-latest` model by default.
-- Free to use via the OpenAI API.
-- Works in Deno and other modern JavaScript runtimes.
+## 使い方
 
-## Usage
+### 1. 環境のセットアップ
 
-### 1. Set up your environment
-
-Create a `.env` file in your project root and add your OpenAI API key:
+プロジェクトルートに `.env` ファイルを作成し、OpenAI APIキーを追加してください。
 
 ```sh
 OPENAI_API_KEY=your_api_key_here
 ```
 
-This file is included in `.gitignore` to keep your key secure.
+キーを安全に保つため、このファイルは `.gitignore` に指定されています。
 
-### 2. Call the function
+### 2. 関数の呼び出し
 
-Import and use `fetchModeration` in your Deno or JavaScript project.
+DenoやJavaScriptプロジェクトで `fetchModeration` をインポートして使用します。
 
 ```js
 import { fetchModeration } from "https://code4fukui.github.io/openai-moderation/fetchModeration.js";
@@ -37,9 +35,9 @@ const result = await fetchModeration(input);
 console.log(result);
 ```
 
-## Moderation Categories
+## モデレーションカテゴリ
 
-The API checks for content in the following categories. For more details, see the [official OpenAI documentation](https://platform.openai.com/docs/guides/moderation).
+APIは以下のカテゴリに該当するコンテンツをチェックします。詳細については、[公式のOpenAIドキュメント](https://platform.openai.com/docs/guides/moderation)を参照してください。
 
 | カテゴリ名（英語）          | 日本語訳                     | 説明 |
 |-----------------------------|------------------------------|------|
@@ -58,10 +56,10 @@ The API checks for content in the following categories. For more details, see th
 | `hate/explicit`             | 露骨なヘイト                 | あからさまな差別的発言 |
 | `violence/intent`           | 暴力の意図                   | 暴力を起こそうとする明確な意思 |
 
-## Pricing
+## 料金
 
-The OpenAI Moderation endpoint is free to use. See [OpenAI's pricing page](https://platform.openai.com/docs/pricing#moderation) for details.
+OpenAIのモデレーションエンドポイントは無料で利用可能です。詳細については、[OpenAIの料金ページ](https://platform.openai.com/docs/pricing#moderation)を参照してください。
 
-## License
+## ライセンス
 
 MIT
